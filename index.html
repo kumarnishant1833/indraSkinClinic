@@ -1,0 +1,2201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Indra Skin Clinic – Expert dermatology care by Dr. Ajay Kumar Rai in Vikas Nagar, Lucknow. Trusted skin, hair & cosmetic treatments.">
+<meta name="keywords" content="skin clinic Lucknow, dermatologist Lucknow, Dr Ajay Kumar Rai, Indra Skin Clinic, Vikas Nagar, acne treatment, hair fall, skin care">
+<meta property="og:title" content="Indra Skin Clinic | Dr. Ajay Kumar Rai – Dermatologist, Lucknow">
+<meta property="og:description" content="Premium dermatology care in the heart of Vikas Nagar, Lucknow. Book your consultation today.">
+<title>Indra Skin Clinic | Dr. Ajay Kumar Rai – Dermatologist, Lucknow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --cream: #faf7f4;
+    --blush: #f2e8e1;
+    --rose: #c9897a;
+    --rose-deep: #a96858;
+    --rose-light: #f0d5cc;
+    --gold: #c8a97a;
+    --gold-light: #e8d5b0;
+    --charcoal: #2c2420;
+    --brown: #6b4c3b;
+    --warm-gray: #8a7a72;
+    --light-gray: #f5f1ee;
+    --white: #ffffff;
+    --shadow-sm: 0 2px 12px rgba(44,36,32,0.08);
+    --shadow-md: 0 8px 32px rgba(44,36,32,0.12);
+    --shadow-lg: 0 20px 60px rgba(44,36,32,0.16);
+    --radius: 16px;
+    --radius-lg: 24px;
+    --font-display: 'Cormorant Garamond', serif;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+    --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--charcoal);
+    overflow-x: hidden;
+    line-height: 1.7;
+  }
+
+  /* ─── LOADER ─── */
+  #loader {
+    position: fixed; inset: 0;
+    background: var(--cream);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.7s ease, visibility 0.7s ease;
+  }
+  #loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+  .loader-logo {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--rose-deep);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.3rem;
+    animation: fadeInUp 0.8s ease forwards;
+  }
+  .loader-sub {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    color: var(--warm-gray);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+    animation: fadeInUp 0.8s ease 0.2s both;
+  }
+  .loader-bar-wrap {
+    width: 180px; height: 2px;
+    background: var(--rose-light);
+    border-radius: 10px;
+    overflow: hidden;
+    animation: fadeInUp 0.6s ease 0.4s both;
+  }
+  .loader-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--rose), var(--gold));
+    border-radius: 10px;
+    animation: loadBar 2s ease forwards;
+  }
+  @keyframes loadBar { from { width: 0; } to { width: 100%; } }
+
+  .loader-credit {
+    position: absolute; bottom: 2rem;
+    font-size: 0.72rem;
+    color: var(--warm-gray);
+    letter-spacing: 0.05em;
+  }
+  .loader-credit a {
+    color: var(--rose);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+  }
+  .loader-credit a:hover { color: var(--rose-deep); text-decoration: underline; }
+
+  /* ─── NAVBAR ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 0.9rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: var(--transition);
+    background: transparent;
+  }
+  nav.scrolled {
+    background: rgba(250, 247, 244, 0.97);
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-sm);
+    padding: 0.65rem 2rem;
+  }
+  .nav-brand {
+    display: flex; align-items: center; gap: 0.75rem;
+    text-decoration: none;
+  }
+  .nav-brand-icon {
+    width: 42px; height: 42px;
+    background: linear-gradient(135deg, var(--rose), var(--rose-deep));
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(169, 104, 88, 0.35);
+  }
+  .nav-brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+  .nav-brand-name {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    letter-spacing: 0.02em;
+  }
+  .nav-brand-tagline {
+    font-size: 0.62rem;
+    color: var(--warm-gray);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex; align-items: center; gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: var(--transition);
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute; bottom: -3px; left: 0;
+    width: 0; height: 1.5px;
+    background: var(--rose);
+    transition: width 0.3s ease;
+  }
+  .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+  .nav-links a:hover { color: var(--rose-deep); }
+
+  .btn-nav {
+    background: linear-gradient(135deg, var(--rose), var(--rose-deep));
+    color: white !important;
+    padding: 0.55rem 1.4rem;
+    border-radius: 50px;
+    font-size: 0.8rem !important;
+    letter-spacing: 0.08em !important;
+    box-shadow: 0 4px 15px rgba(169, 104, 88, 0.35);
+    transition: var(--transition) !important;
+  }
+  .btn-nav:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(169, 104, 88, 0.45) !important; }
+  .btn-nav::after { display: none !important; }
+
+  .hamburger {
+    display: none;
+    flex-direction: column; gap: 5px;
+    cursor: pointer; padding: 4px;
+    background: none; border: none;
+  }
+  .hamburger span {
+    display: block; width: 24px; height: 2px;
+    background: var(--charcoal);
+    border-radius: 2px;
+    transition: var(--transition);
+  }
+  .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.active span:nth-child(2) { opacity: 0; }
+  .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(250, 247, 244, 0.98);
+    backdrop-filter: blur(20px);
+    z-index: 999;
+    flex-direction: column; align-items: center; justify-content: center;
+    gap: 2.5rem;
+    transition: var(--transition);
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: var(--transition);
+  }
+  .mobile-menu a:hover { color: var(--rose); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 4rem 5rem 6rem;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--rose-light);
+    color: var(--rose-deep);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    width: fit-content;
+    animation: fadeInUp 0.8s ease 0.5s both;
+  }
+  .hero-badge i { font-size: 0.65rem; }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--charcoal);
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.8s ease 0.7s both;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--rose-deep);
+  }
+  .hero-desc {
+    font-size: 1rem;
+    color: var(--warm-gray);
+    line-height: 1.8;
+    max-width: 440px;
+    margin-bottom: 2.5rem;
+    animation: fadeInUp 0.8s ease 0.9s both;
+  }
+  .hero-cta {
+    display: flex; gap: 1rem; align-items: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.8s ease 1.1s both;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--rose), var(--rose-deep));
+    color: white;
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    box-shadow: 0 8px 25px rgba(169, 104, 88, 0.4);
+    transition: var(--transition);
+    display: inline-flex; align-items: center; gap: 0.5rem;
+  }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(169, 104, 88, 0.5); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--charcoal);
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    border: 1.5px solid var(--rose-light);
+    transition: var(--transition);
+    display: inline-flex; align-items: center; gap: 0.5rem;
+  }
+  .btn-outline:hover { border-color: var(--rose); color: var(--rose-deep); transform: translateY(-2px); }
+
+  .hero-stats {
+    display: flex; gap: 2rem; margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rose-light);
+    animation: fadeInUp 0.8s ease 1.3s both;
+  }
+  .stat { display: flex; flex-direction: column; gap: 0.2rem; }
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--rose-deep);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.72rem;
+    color: var(--warm-gray);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .hero-right {
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(160deg, var(--blush) 0%, var(--rose-light) 100%);
+    overflow: hidden;
+  }
+  .hero-img-wrap {
+    position: relative;
+    width: 85%;
+    height: 80%;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    animation: heroImgIn 1.2s ease 0.4s both;
+  }
+  @keyframes heroImgIn {
+    from { opacity: 0; transform: scale(0.93) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+  .hero-img-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+  }
+  .hero-img-placeholder {
+    width: 100%; height: 100%;
+    background: linear-gradient(160deg, var(--rose-light) 0%, var(--blush) 60%, var(--gold-light) 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 1rem;
+    color: var(--rose);
+  }
+  .hero-img-placeholder i { font-size: 3rem; opacity: 0.5; }
+  .hero-img-placeholder span { font-size: 0.75rem; opacity: 0.6; letter-spacing: 0.1em; }
+
+  .hero-card-float {
+    position: absolute;
+    bottom: 2.5rem; left: -1.5rem;
+    background: white;
+    border-radius: var(--radius);
+    padding: 1rem 1.4rem;
+    box-shadow: var(--shadow-md);
+    display: flex; align-items: center; gap: 0.75rem;
+    animation: heroImgIn 1s ease 1.2s both;
+  }
+  .hero-card-icon {
+    width: 40px; height: 40px;
+    background: var(--rose-light);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--rose-deep);
+    font-size: 1rem;
+  }
+  .hero-card-text { display: flex; flex-direction: column; }
+  .hero-card-title { font-size: 0.82rem; font-weight: 600; color: var(--charcoal); }
+  .hero-card-sub { font-size: 0.7rem; color: var(--warm-gray); }
+
+  .hero-decor-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(201, 137, 122, 0.1);
+    animation: pulse 4s ease-in-out infinite;
+  }
+  .hero-decor-1 { width: 300px; height: 300px; top: -80px; right: -80px; }
+  .hero-decor-2 { width: 200px; height: 200px; bottom: 50px; left: 50px; animation-delay: 2s; }
+  @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.6; } 50% { transform: scale(1.08); opacity: 1; } }
+
+  /* ─── SECTION UTILITIES ─── */
+  section { padding: 6rem 0; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+  .section-label {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--rose);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .section-label::before {
+    content: '';
+    display: block; width: 28px; height: 1.5px;
+    background: var(--rose);
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--charcoal);
+    margin-bottom: 1rem;
+  }
+  .section-title em { font-style: italic; color: var(--rose-deep); }
+  .section-desc {
+    font-size: 0.95rem;
+    color: var(--warm-gray);
+    line-height: 1.8;
+    max-width: 560px;
+  }
+  .text-center { text-align: center; }
+  .text-center .section-label { justify-content: center; }
+  .text-center .section-label::before { display: none; }
+  .text-center .section-desc { margin: 0 auto; }
+
+  /* ─── ABOUT CLINIC ─── */
+  .about-clinic { background: var(--white); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .about-img-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    position: relative;
+  }
+  .about-img-item {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    aspect-ratio: 3/4;
+  }
+  .about-img-item:first-child { margin-top: 2rem; }
+  .about-img-item img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+    transition: transform 0.6s ease;
+  }
+  .about-img-item:hover img { transform: scale(1.04); }
+  .img-placeholder {
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 0.75rem; padding: 1rem; text-align: center;
+  }
+  .img-placeholder i { font-size: 2rem; opacity: 0.4; }
+  .img-placeholder span { font-size: 0.65rem; opacity: 0.55; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  .about-badge-float {
+    position: absolute; bottom: -1rem; left: 50%; transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--rose), var(--rose-deep));
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--radius);
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(169, 104, 88, 0.4);
+    white-space: nowrap;
+    min-width: 180px;
+  }
+  .about-badge-num { font-family: var(--font-display); font-size: 1.8rem; font-weight: 600; line-height: 1; }
+  .about-badge-txt { font-size: 0.7rem; letter-spacing: 0.1em; opacity: 0.9; }
+
+  .about-content { display: flex; flex-direction: column; gap: 1.5rem; }
+  .about-features {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  .feature-item {
+    display: flex; align-items: flex-start; gap: 0.75rem;
+    padding: 1rem;
+    background: var(--light-gray);
+    border-radius: var(--radius);
+    transition: var(--transition);
+  }
+  .feature-item:hover { background: var(--rose-light); transform: translateY(-2px); }
+  .feature-icon {
+    width: 36px; height: 36px; flex-shrink: 0;
+    background: var(--rose-light);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--rose-deep);
+    font-size: 0.85rem;
+  }
+  .feature-item:hover .feature-icon { background: white; }
+  .feature-text { display: flex; flex-direction: column; }
+  .feature-title { font-size: 0.82rem; font-weight: 600; color: var(--charcoal); }
+  .feature-desc { font-size: 0.72rem; color: var(--warm-gray); line-height: 1.5; margin-top: 0.15rem; }
+
+  /* ─── ABOUT DOCTOR ─── */
+  .about-doctor {
+    background: linear-gradient(160deg, var(--cream) 0%, var(--blush) 100%);
+  }
+  .doctor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .doctor-img-wrap {
+    position: relative;
+  }
+  .doctor-img-main {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    aspect-ratio: 3/4;
+  }
+  .doctor-img-main img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .doctor-cert-card {
+    position: absolute;
+    top: 2rem; right: -2rem;
+    background: white;
+    border-radius: var(--radius);
+    padding: 1rem 1.2rem;
+    box-shadow: var(--shadow-md);
+    min-width: 160px;
+  }
+  .cert-icon { color: var(--gold); font-size: 1.3rem; margin-bottom: 0.4rem; }
+  .cert-title { font-size: 0.8rem; font-weight: 600; color: var(--charcoal); }
+  .cert-sub { font-size: 0.68rem; color: var(--warm-gray); margin-top: 0.15rem; }
+
+  .doctor-content { display: flex; flex-direction: column; gap: 1.5rem; }
+  .doctor-name {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    line-height: 1.1;
+  }
+  .doctor-designation {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--rose-deep);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .doctor-bio {
+    font-size: 0.93rem;
+    color: var(--warm-gray);
+    line-height: 1.9;
+  }
+  .doctor-quals {
+    display: flex; flex-direction: column; gap: 0.6rem;
+  }
+  .qual-item {
+    display: flex; align-items: center; gap: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--charcoal);
+  }
+  .qual-item i { color: var(--rose); font-size: 0.75rem; width: 14px; }
+
+  .doctor-specialties {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+  }
+  .specialty-tag {
+    background: var(--rose-light);
+    color: var(--rose-deep);
+    padding: 0.35rem 0.9rem;
+    border-radius: 50px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  /* ─── TREATMENTS ─── */
+  .treatments { background: var(--white); }
+  .treatments-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .treatment-card {
+    background: var(--cream);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: var(--transition);
+    cursor: pointer;
+    border: 1px solid transparent;
+  }
+  .treatment-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--rose-light);
+  }
+  .treatment-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    position: relative;
+    background: var(--blush);
+  }
+  .treatment-img img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+    transition: transform 0.6s ease;
+  }
+  .treatment-card:hover .treatment-img img { transform: scale(1.06); }
+  .treatment-tag {
+    position: absolute; top: 1rem; left: 1rem;
+    background: white;
+    color: var(--rose-deep);
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    box-shadow: var(--shadow-sm);
+  }
+  .treatment-body { padding: 1.5rem; }
+  .treatment-icon {
+    width: 44px; height: 44px;
+    background: var(--rose-light);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--rose-deep);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    transition: var(--transition);
+  }
+  .treatment-card:hover .treatment-icon { background: var(--rose); color: white; }
+  .treatment-name {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 0.5rem;
+  }
+  .treatment-desc {
+    font-size: 0.82rem;
+    color: var(--warm-gray);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .treatment-link {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--rose);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: var(--transition);
+  }
+  .treatment-link i { font-size: 0.7rem; transition: transform 0.3s ease; }
+  .treatment-card:hover .treatment-link { color: var(--rose-deep); }
+  .treatment-card:hover .treatment-link i { transform: translateX(4px); }
+
+  /* ─── WHY CHOOSE US ─── */
+  .why-us {
+    background: var(--charcoal);
+    position: relative;
+    overflow: hidden;
+  }
+  .why-us::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 40%; height: 100%;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+  .why-us .section-label { color: var(--gold); }
+  .why-us .section-label::before { background: var(--gold); }
+  .why-us .section-title { color: var(--white); }
+  .why-us .section-desc { color: rgba(255,255,255,0.6); }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 3rem;
+  }
+  .why-features {
+    display: flex; flex-direction: column; gap: 1.5rem;
+  }
+  .why-item {
+    display: flex; gap: 1.25rem; align-items: flex-start;
+    padding: 1.5rem;
+    background: rgba(255,255,255,0.04);
+    border-radius: var(--radius);
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: var(--transition);
+  }
+  .why-item:hover {
+    background: rgba(201,137,122,0.12);
+    border-color: rgba(201,137,122,0.3);
+    transform: translateX(6px);
+  }
+  .why-icon {
+    width: 50px; height: 50px; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--rose), var(--rose-deep));
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 1.15rem;
+    box-shadow: 0 6px 20px rgba(169, 104, 88, 0.35);
+  }
+  .why-text { display: flex; flex-direction: column; gap: 0.3rem; }
+  .why-title { font-size: 1rem; font-weight: 600; color: white; }
+  .why-desc { font-size: 0.83rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
+
+  .why-img-side {
+    position: relative;
+  }
+  .why-img-main {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+  .why-img-main img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .why-stat-card {
+    position: absolute;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.5rem;
+    color: white;
+    text-align: center;
+  }
+  .why-stat-1 { bottom: 2rem; left: -2rem; min-width: 130px; }
+  .why-stat-2 { top: 2rem; right: -1.5rem; min-width: 130px; }
+  .why-stat-num {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .why-stat-txt { font-size: 0.68rem; color: rgba(255,255,255,0.6); letter-spacing: 0.08em; margin-top: 0.25rem; }
+
+  /* ─── GALLERY ─── */
+  .gallery { background: var(--cream); }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 280px);
+    gap: 1.2rem;
+    margin-top: 3rem;
+  }
+  .gallery-item {
+    border-radius: var(--radius);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+  }
+  .gallery-item:first-child { grid-row: span 2; }
+  .gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+    transition: transform 0.6s ease;
+  }
+  .gallery-item:hover img { transform: scale(1.05); }
+  .gallery-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(44,36,32,0.7) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex; align-items: flex-end; padding: 1.5rem;
+  }
+  .gallery-item:hover .gallery-overlay { opacity: 1; }
+  .gallery-overlay-text {
+    color: white;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  /* ─── TESTIMONIALS ─── */
+  .testimonials {
+    background: linear-gradient(160deg, var(--blush) 0%, var(--cream) 100%);
+  }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .testimonial-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    position: relative;
+    border: 1px solid transparent;
+  }
+  .testimonial-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--rose-light);
+  }
+  .testimonial-quote {
+    font-size: 2.5rem;
+    line-height: 1;
+    color: var(--rose-light);
+    font-family: Georgia, serif;
+    margin-bottom: 0.75rem;
+  }
+  .testimonial-text {
+    font-size: 0.88rem;
+    color: var(--warm-gray);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+  .testimonial-author {
+    display: flex; align-items: center; gap: 0.9rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--blush);
+  }
+  .author-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--rose-light);
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--rose);
+    font-size: 1.1rem;
+  }
+  .author-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .author-info { display: flex; flex-direction: column; gap: 0.1rem; }
+  .author-name { font-size: 0.85rem; font-weight: 600; color: var(--charcoal); }
+  .author-detail { font-size: 0.7rem; color: var(--warm-gray); }
+  .stars {
+    position: absolute; top: 1.5rem; right: 1.5rem;
+    color: var(--gold);
+    font-size: 0.75rem;
+    display: flex; gap: 2px;
+  }
+
+  /* ─── FAQ ─── */
+  .faq { background: var(--white); }
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+    margin-top: 3rem;
+  }
+  .faq-img {
+    position: sticky; top: 7rem;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    box-shadow: var(--shadow-lg);
+  }
+  .faq-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .faq-list { display: flex; flex-direction: column; gap: 0; }
+  .faq-item {
+    border-bottom: 1px solid var(--blush);
+    overflow: hidden;
+  }
+  .faq-question {
+    width: 100%;
+    background: none; border: none;
+    padding: 1.4rem 0;
+    display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer;
+    text-align: left;
+    gap: 1rem;
+    transition: var(--transition);
+  }
+  .faq-question-text {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    transition: color 0.3s ease;
+    line-height: 1.5;
+  }
+  .faq-question:hover .faq-question-text { color: var(--rose-deep); }
+  .faq-icon {
+    width: 28px; height: 28px; flex-shrink: 0;
+    background: var(--light-gray);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--rose);
+    font-size: 0.7rem;
+    transition: var(--transition);
+  }
+  .faq-item.open .faq-icon { background: var(--rose); color: white; transform: rotate(45deg); }
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+  }
+  .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 1.2rem; }
+  .faq-answer p {
+    font-size: 0.85rem;
+    color: var(--warm-gray);
+    line-height: 1.8;
+  }
+
+  /* ─── APPOINTMENT FORM ─── */
+  .appointment {
+    background: var(--charcoal);
+    position: relative; overflow: hidden;
+  }
+  .appointment::before {
+    content: '';
+    position: absolute; top: -100px; left: -100px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,137,122,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .appointment-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .appointment .section-title { color: white; }
+  .appointment .section-label { color: var(--gold); }
+  .appointment .section-label::before { background: var(--gold); }
+  .appointment .section-desc { color: rgba(255,255,255,0.6); }
+
+  .appt-info { display: flex; flex-direction: column; gap: 2rem; margin-top: 1.5rem; }
+  .appt-info-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+  }
+  .appt-info-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    background: rgba(201,137,122,0.15);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--rose);
+    font-size: 1rem;
+  }
+  .appt-info-text { display: flex; flex-direction: column; gap: 0.15rem; }
+  .appt-info-title { font-size: 0.78rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.1em; }
+  .appt-info-value { font-size: 0.9rem; color: white; font-weight: 500; }
+
+  .form-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+  }
+  .form-title {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+  .form-subtitle { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-bottom: 2rem; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+  .form-group label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .form-control {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    padding: 0.85rem 1rem;
+    font-size: 0.88rem;
+    color: white;
+    font-family: var(--font-body);
+    transition: var(--transition);
+    outline: none;
+    width: 100%;
+  }
+  .form-control::placeholder { color: rgba(255,255,255,0.3); }
+  .form-control:focus {
+    border-color: var(--rose);
+    background: rgba(201,137,122,0.08);
+    box-shadow: 0 0 0 3px rgba(201,137,122,0.15);
+  }
+  select.form-control option { background: var(--charcoal); color: white; }
+  textarea.form-control { resize: vertical; min-height: 100px; }
+
+  .btn-submit {
+    width: 100%;
+    background: linear-gradient(135deg, var(--rose), var(--rose-deep));
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--font-body);
+    display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+    box-shadow: 0 6px 20px rgba(169, 104, 88, 0.4);
+    margin-top: 0.5rem;
+  }
+  .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(169, 104, 88, 0.5); }
+  .btn-submit i { font-size: 1rem; }
+  .form-note {
+    font-size: 0.7rem; color: rgba(255,255,255,0.35);
+    text-align: center; margin-top: 0.75rem;
+  }
+
+  /* ─── CONTACT ─── */
+  .contact { background: var(--cream); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: start;
+    margin-top: 3rem;
+  }
+  .contact-cards { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    display: flex; gap: 1rem; align-items: flex-start;
+    transition: var(--transition);
+    border: 1px solid transparent;
+  }
+  .contact-card:hover { border-color: var(--rose-light); transform: translateX(4px); }
+  .contact-card-icon {
+    width: 46px; height: 46px; flex-shrink: 0;
+    background: var(--rose-light);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--rose-deep);
+    font-size: 1.05rem;
+  }
+  .contact-card-body { display: flex; flex-direction: column; gap: 0.2rem; }
+  .contact-card-title { font-size: 0.72rem; font-weight: 700; color: var(--rose); letter-spacing: 0.12em; text-transform: uppercase; }
+  .contact-card-value { font-size: 0.9rem; color: var(--charcoal); font-weight: 500; }
+  .contact-card-sub { font-size: 0.75rem; color: var(--warm-gray); }
+  .contact-card-value a { color: inherit; text-decoration: none; transition: color 0.3s; }
+  .contact-card-value a:hover { color: var(--rose-deep); }
+
+  .hours-table { width: 100%; margin-top: 0.5rem; }
+  .hours-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--blush);
+    font-size: 0.82rem;
+  }
+  .hours-row:last-child { border-bottom: none; }
+  .hours-day { color: var(--charcoal); font-weight: 500; }
+  .hours-time { color: var(--warm-gray); }
+  .hours-closed { color: var(--rose); }
+
+  .map-container {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    height: 100%;
+    min-height: 400px;
+  }
+  .map-container iframe {
+    width: 100%; height: 100%; min-height: 400px;
+    border: none; display: block;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #1a1210;
+    color: rgba(255,255,255,0.7);
+    padding: 5rem 0 0;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .footer-brand { display: flex; flex-direction: column; gap: 1rem; }
+  .footer-logo {
+    display: flex; align-items: center; gap: 0.75rem;
+    text-decoration: none; width: fit-content;
+  }
+  .footer-logo-icon {
+    width: 40px; height: 40px;
+    background: linear-gradient(135deg, var(--rose), var(--rose-deep));
+    border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 1rem;
+  }
+  .footer-logo-text {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 0.03em;
+  }
+  .footer-bio { font-size: 0.82rem; line-height: 1.8; color: rgba(255,255,255,0.5); }
+  .footer-socials { display: flex; gap: 0.6rem; }
+  .footer-social {
+    width: 36px; height: 36px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: var(--transition);
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+  .footer-social:hover { background: var(--rose); color: white; border-color: var(--rose); }
+
+  .footer-col-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+  }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+  .footer-links a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 0.83rem;
+    transition: color 0.3s ease;
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+  .footer-links a:hover { color: var(--rose); }
+  .footer-links a i { font-size: 0.6rem; }
+
+  .footer-bottom {
+    padding: 1.5rem 0;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.3);
+  }
+  .footer-bottom a { color: var(--rose); text-decoration: none; }
+  .footer-credit { display: flex; align-items: center; gap: 0.4rem; }
+  .footer-credit a { color: var(--gold); }
+
+  /* ─── FLOATING ELEMENTS ─── */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 2rem; right: 2rem;
+    z-index: 500;
+    width: 58px; height: 58px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+    transition: var(--transition);
+    animation: waBounce 2s ease-in-out infinite;
+  }
+  .whatsapp-float:hover {
+    transform: scale(1.12) translateY(-3px);
+    box-shadow: 0 10px 35px rgba(37, 211, 102, 0.6);
+  }
+  @keyframes waBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+  .wa-tooltip {
+    position: absolute;
+    right: 68px; top: 50%; transform: translateY(-50%);
+    background: white;
+    color: var(--charcoal);
+    padding: 0.4rem 0.9rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: var(--shadow-md);
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .wa-tooltip::after {
+    content: '';
+    position: absolute; right: -5px; top: 50%; transform: translateY(-50%);
+    border: 5px solid transparent;
+    border-left-color: white;
+    border-right: none;
+  }
+  .whatsapp-float:hover .wa-tooltip { opacity: 1; }
+
+  .scroll-top {
+    position: fixed;
+    bottom: 2rem; left: 2rem;
+    z-index: 500;
+    width: 44px; height: 44px;
+    background: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--rose);
+    font-size: 0.85rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    border: none;
+    transition: var(--transition);
+    opacity: 0; pointer-events: none;
+  }
+  .scroll-top.show { opacity: 1; pointer-events: all; }
+  .scroll-top:hover { background: var(--rose); color: white; transform: translateY(-3px); }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+  .delay-1 { transition-delay: 0.1s; }
+  .delay-2 { transition-delay: 0.2s; }
+  .delay-3 { transition-delay: 0.3s; }
+  .delay-4 { transition-delay: 0.4s; }
+
+  /* ─── DIVIDER ─── */
+  .section-divider {
+    display: flex; align-items: center; justify-content: center;
+    gap: 1rem; padding: 0.5rem 0 2rem;
+  }
+  .divider-line { flex: 1; max-width: 80px; height: 1px; background: var(--rose-light); }
+  .divider-icon { color: var(--rose); font-size: 0.7rem; opacity: 0.6; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 1024px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 8rem 2.5rem 3rem; }
+    .hero-right { height: 60vw; max-height: 420px; }
+    .about-grid, .doctor-grid, .faq-grid, .appointment-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .why-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .why-img-side { display: none; }
+    .treatments-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
+    .gallery-item:first-child { grid-row: span 1; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .doctor-cert-card { right: 0.5rem; }
+    .hero-card-float { left: 0.5rem; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 0.75rem 1.25rem; }
+    nav.scrolled { padding: 0.6rem 1.25rem; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    section { padding: 4rem 0; }
+    .hero-left { padding: 7rem 1.5rem 2.5rem; }
+    .hero-stats { gap: 1.2rem; }
+    .stat-number { font-size: 1.5rem; }
+    .treatments-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .about-img-grid { grid-template-columns: 1fr 1fr; }
+    .about-features { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-title { font-size: 2.2rem; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .hero-stats { flex-wrap: wrap; gap: 1rem; }
+    .footer-socials { gap: 0.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-logo">Indra Skin Clinic</div>
+  <div class="loader-sub">Dermatology &amp; Skin Care</div>
+  <div class="loader-bar-wrap">
+    <div class="loader-bar"></div>
+  </div>
+  <div class="loader-credit">Made with <span style="color:var(--rose)">♥</span> by <a href="YOUR_PORTFOLIO_LINK" target="_blank" rel="noopener">Prateek</a></div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#home" class="nav-brand">
+    <div class="nav-brand-icon"><i class="fa-solid fa-spa"></i></div>
+    <div class="nav-brand-text">
+      <span class="nav-brand-name">Indra Skin Clinic</span>
+      <span class="nav-brand-tagline">Dr. Ajay Kumar Rai</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#doctor">Doctor</a></li>
+    <li><a href="#treatments">Treatments</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#appointment" class="btn-nav">Book Now</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" class="mm-link">About</a>
+  <a href="#doctor" class="mm-link">Doctor</a>
+  <a href="#treatments" class="mm-link">Treatments</a>
+  <a href="#gallery" class="mm-link">Gallery</a>
+  <a href="#testimonials" class="mm-link">Reviews</a>
+  <a href="#appointment" class="mm-link">Book Appointment</a>
+  <a href="#contact" class="mm-link">Contact</a>
+</div>
+
+<!-- HERO SECTION -->
+<section id="home" class="hero">
+  <div class="hero-left">
+    <div class="hero-badge"><i class="fa-solid fa-shield-halved"></i> Trusted Dermatology Care in Lucknow</div>
+    <h1 class="hero-title">
+      Your Skin Deserves<br><em>Expert Care</em> &amp;<br>Gentle Touch
+    </h1>
+    <p class="hero-desc">
+      Under the expert care of Dr. Ajay Kumar Rai, Indra Skin Clinic offers advanced dermatological treatments for skin, hair, and cosmetic concerns — right in the heart of Vikas Nagar, Lucknow.
+    </p>
+    <div class="hero-cta">
+      <a href="#appointment" class="btn-primary"><i class="fa-brands fa-whatsapp"></i> Book via WhatsApp</a>
+      <a href="#treatments" class="btn-outline"><i class="fa-solid fa-grid-2"></i> Our Treatments</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-number">5000+</span>
+        <span class="stat-label">Happy Patients</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">15+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">30+</span>
+        <span class="stat-label">Treatments</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-decor-circle hero-decor-1"></div>
+    <div class="hero-decor-circle hero-decor-2"></div>
+    <div class="hero-img-wrap">
+      <img src="images/hero-banner.jpg" alt="Indra Skin Clinic – Expert Dermatology Care"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="hero-img-placeholder" style="display:none; min-height:400px; background:linear-gradient(160deg,#f0d5cc,#faf7f4 60%,#e8d5b0)">
+        <i class="fa-solid fa-image" style="font-size:3rem;color:#c9897a;opacity:0.5"></i>
+        <span style="font-size:0.75rem;color:#8a7a72;letter-spacing:0.1em">HERO BANNER IMAGE<br><small>Place hero-banner.jpg in /images/</small></span>
+      </div>
+    </div>
+    <div class="hero-card-float">
+      <div class="hero-card-icon"><i class="fa-regular fa-calendar-check"></i></div>
+      <div class="hero-card-text">
+        <span class="hero-card-title">Book Appointment</span>
+        <span class="hero-card-sub">Same Day Available</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT CLINIC -->
+<section id="about" class="about-clinic">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-grid reveal-left">
+        <div class="about-img-item">
+          <img src="images/clinic-interior1.jpg" alt="Clinic Interior"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="img-placeholder" style="display:none;background:linear-gradient(160deg,#f0d5cc,#faf7f4);min-height:220px">
+            <i class="fa-solid fa-hospital" style="color:var(--rose)"></i>
+            <span style="color:var(--warm-gray)">Clinic Interior<br><small>clinic-interior1.jpg</small></span>
+          </div>
+        </div>
+        <div class="about-img-item" style="margin-top:2.5rem">
+          <img src="images/clinic-interior2.jpg" alt="Clinic Reception"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="img-placeholder" style="display:none;background:linear-gradient(160deg,#e8d5b0,#faf7f4);min-height:220px">
+            <i class="fa-solid fa-couch" style="color:var(--gold)"></i>
+            <span style="color:var(--warm-gray)">Reception Area<br><small>clinic-interior2.jpg</small></span>
+          </div>
+        </div>
+        <div class="about-badge-float">
+          <div class="about-badge-num">15+</div>
+          <div class="about-badge-txt">Years of Excellence</div>
+        </div>
+      </div>
+      <div class="about-content reveal-right">
+        <div>
+          <div class="section-label">About Us</div>
+          <h2 class="section-title">Caring for Your Skin<br>with <em>Precision</em> &amp; Compassion</h2>
+          <p class="section-desc">
+            Indra Skin Clinic, situated in the serene locality of Vikas Nagar, Lucknow, is a premier destination for advanced dermatological care. Led by Dr. Ajay Kumar Rai, the clinic blends clinical expertise with a patient-first approach to deliver outstanding results.
+          </p>
+        </div>
+        <div class="about-features">
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-microscope"></i></div>
+            <div class="feature-text">
+              <span class="feature-title">Advanced Diagnostics</span>
+              <span class="feature-desc">Precise analysis of skin conditions using modern tools</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-user-doctor"></i></div>
+            <div class="feature-text">
+              <span class="feature-title">Expert Consultation</span>
+              <span class="feature-desc">Personalized care plans by an experienced dermatologist</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-shield-heart"></i></div>
+            <div class="feature-text">
+              <span class="feature-title">Safe Treatments</span>
+              <span class="feature-desc">Clinically approved procedures with highest safety standards</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="feature-text">
+              <span class="feature-title">Conveniently Located</span>
+              <span class="feature-desc">Near Bhasin Medicals, Sector 3, Vikas Nagar, Lucknow</span>
+            </div>
+          </div>
+        </div>
+        <a href="#appointment" class="btn-primary" style="width:fit-content">
+          <i class="fa-solid fa-calendar-plus"></i> Schedule a Consultation
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT DOCTOR -->
+<section id="doctor" class="about-doctor">
+  <div class="container">
+    <div class="doctor-grid">
+      <div class="doctor-img-wrap reveal-left">
+        <div class="doctor-img-main">
+          <img src="images/doctor.jpg" alt="Dr. Ajay Kumar Rai – Dermatologist"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="img-placeholder" style="display:none;min-height:400px;background:linear-gradient(160deg,#f0d5cc,#e8d5b0)">
+            <i class="fa-solid fa-user-doctor" style="font-size:4rem;color:var(--rose);opacity:0.5"></i>
+            <span style="color:var(--warm-gray)">Doctor Photo<br><small>doctor.jpg</small></span>
+          </div>
+        </div>
+        <div class="doctor-cert-card">
+          <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+          <div class="cert-title">MBBS, MD (Dermatology)</div>
+          <div class="cert-sub">Qualified Dermatologist</div>
+        </div>
+      </div>
+      <div class="doctor-content reveal-right">
+        <div>
+          <span class="doctor-designation">Lead Dermatologist &amp; Founder</span>
+          <h2 class="doctor-name">Dr. Ajay<br>Kumar Rai</h2>
+        </div>
+        <p class="doctor-bio">
+          Dr. Ajay Kumar Rai is a seasoned dermatologist with over 15 years of dedicated experience in treating a wide range of skin, hair, and nail conditions. Known for his patient-centric approach and precise treatment methodology, he has helped thousands of patients in Lucknow achieve healthier skin and renewed confidence.
+        </p>
+        <p class="doctor-bio">
+          Practicing at Indra Skin Clinic in Vikas Nagar, Dr. Rai is committed to delivering world-class dermatological care within a warm, accessible clinical environment. His expertise spans medical dermatology, cosmetic procedures, and paediatric skin conditions.
+        </p>
+        <div class="doctor-quals">
+          <div class="qual-item"><i class="fa-solid fa-circle-check"></i> MBBS – Medical Graduate</div>
+          <div class="qual-item"><i class="fa-solid fa-circle-check"></i> MD / Specialisation in Dermatology</div>
+          <div class="qual-item"><i class="fa-solid fa-circle-check"></i> Registered Medical Practitioner, Uttar Pradesh</div>
+          <div class="qual-item"><i class="fa-solid fa-circle-check"></i> 15+ Years Clinical Experience</div>
+        </div>
+        <div class="doctor-specialties">
+          <span class="specialty-tag">Acne &amp; Pimples</span>
+          <span class="specialty-tag">Hair Loss</span>
+          <span class="specialty-tag">Skin Allergy</span>
+          <span class="specialty-tag">Psoriasis</span>
+          <span class="specialty-tag">Pigmentation</span>
+          <span class="specialty-tag">Warts &amp; Moles</span>
+          <span class="specialty-tag">Cosmetic Dermatology</span>
+        </div>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap">
+          <a href="tel:+919415014154" class="btn-primary"><i class="fa-solid fa-phone"></i> Call Now</a>
+          <a href="https://wa.me/919415014154" class="btn-outline" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TREATMENTS -->
+<section id="treatments" class="treatments">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label">Our Treatments</div>
+      <h2 class="section-title">Comprehensive Skin Care <em>Solutions</em></h2>
+      <p class="section-desc">From common skin conditions to advanced cosmetic procedures, we offer a full spectrum of dermatological treatments tailored to your unique skin needs.</p>
+    </div>
+    <div class="treatments-grid">
+
+      <div class="treatment-card reveal delay-1">
+        <div class="treatment-img">
+          <img src="images/treatment-acne.jpg" alt="Acne Treatment"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="img-placeholder" style="display:none;min-height:200px;background:linear-gradient(160deg,#f0d5cc,#faf7f4)">
+            <i class="fa-solid fa-face-meh" style="color:var(--rose)"></i><span style="color:var(--warm-gray)">treatment-acne.jpg</span>
+          </div>
+          <span class="treatment-tag">Skin</span>
+        </div>
+        <div class="treatment-body">
+          <div class="treatment-icon"><i class="fa-solid fa-droplet"></i></div>
+          <h3 class="treatment-name">Acne & Pimple Treatment</h3>
+          <p class="treatment-desc">Targeted therapies to clear active breakouts, reduce scarring, and prevent future acne with personalised skincare plans.</p>
+          <a href="#appointment" class="treatment-link">Book Consultation <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="treatment-card reveal delay-2">
+        <div class="treatment-img">
+          <img src="images/treatment-hair.jpg" alt="Hair Loss Treatment"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="img-placeholder" style="display:none;min-height:200px;background:linear-gradient(160deg,#e8d5b0,#faf7f4)">
+            <i class="fa-solid fa-scissors" style="color:var(--gold)"></i><span style="color:var(--warm-gray)">treatment-hair.jpg</span>
+          </div>
+          <span class="treatment-tag">Hair</span>
+        </div>
+        <div class="treatment-body">
+          <div class="treatment-icon"><i class="fa-solid fa-head-side"></i></div>
+          <h3 class="treatment-name">Hair Loss & Alopecia</h3>
+          <p class="treatment-desc">Advanced treatment for hair fall, dandruff, scalp disorders, and alopecia using clinically proven protocols.</p>
+          <a href="#appointment" class="treatment-link">Book Consultation <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="treatment-card reveal delay-3">
+        <div class="treatment-img">
+          <img src="images/treatment-pigmentation.jpg" alt="Pigmentation Treatment"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="img-placeholder" style="display:none;min-height:200px;background:linear-gradient(160deg,#f0d5cc,#e8d5b0)">
+            <i class="fa-solid fa-circle-half-stroke" style="color:var(--rose)"></i><span style="color:var(--warm-gray)">treatment-pigmentation.jpg</span>
+          </div>
+          <span class="treatment-tag">Skin</span>
+        </div>
+        <div class="treatment-body">
+          <div class="treatment-icon"><i class="fa-solid fa-palette"></i></div>
+          <h3 class="treatment-name">Pigmentation & Dark Spots</h3>
+          <p class="treatment-desc">Effective solutions for melasma, sunspots, uneven skin tone, and hyperpigmentation using advanced therapies.</p>
+          <a href="#appointment" class="treatment-link">Book Consultation <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="treatment-card reveal delay-1">
+        <div class="treatment-img">
+          <img src="images/treatment-psoriasis.jpg" alt="Psoriasis Treatment"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="img-placeholder" style="display:none;min-height:200px;background:linear-gradient(160deg,#faf7f4,#f0d5cc)">
+            <i class="fa-solid fa-bacterium" style="color:var(--rose)"></i><span style="color:var(--warm-gray)">treatment-psoriasis.jpg</span>
+          </div>
+          <span class="treatment-tag">Medical</span>
+        </div>
+        <div class="treatment-body">
+          <div class="treatment-icon"><i class="fa-solid fa-shield-virus"></i></div>
+          <h3 class="treatment-name">Psoriasis & Eczema</h3>
+          <p class="treatment-desc">Comprehensive management of chronic skin conditions including psoriasis, eczema, and other inflammatory disorders.</p>
+          <a href="#appointment" class="treatment-link">Book Consultation <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="treatment-card reveal delay-2">
+        <div class="treatment-img">
+          <img src="images/treatment-cosmetic.jpg" alt="Cosmetic Dermatology"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="img-placeholder" style="display:none;min-height:200px;background:linear-gradient(160deg,#e8d5b0,#f0d5cc)">
+            <i class="fa-solid fa-star" style="color:var(--gold)"></i><span style="color:var(--warm-gray)">treatment-cosmetic.jpg</span>
+          </div>
+          <span class="treatment-tag">Cosmetic</span>
+        </div>
+        <div class="treatment-body">
+          <div class="treatment-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <h3 class="treatment-name">Cosmetic Procedures</h3>
+          <p class="treatment-desc">Skin rejuvenation, chemical peels, and cosmetic dermatological procedures to enhance your natural beauty.</p>
+          <a href="#appointment" class="treatment-link">Book Consultation <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="treatment-card reveal delay-3">
+        <div class="treatment-img">
+          <img src="images/treatment-allergy.jpg" alt="Skin Allergy Treatment"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="img-placeholder" style="display:none;min-height:200px;background:linear-gradient(160deg,#faf7f4,#e8d5b0)">
+            <i class="fa-solid fa-allergies" style="color:var(--rose)"></i><span style="color:var(--warm-gray)">treatment-allergy.jpg</span>
+          </div>
+          <span class="treatment-tag">Allergy</span>
+        </div>
+        <div class="treatment-body">
+          <div class="treatment-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+          <h3 class="treatment-name">Skin Allergy & Urticaria</h3>
+          <p class="treatment-desc">Diagnosis and treatment of various skin allergies, hives, contact dermatitis and hypersensitivity reactions.</p>
+          <a href="#appointment" class="treatment-link">Book Consultation <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why-us">
+  <div class="container">
+    <div class="why-grid">
+      <div>
+        <div class="reveal">
+          <div class="section-label">Why Choose Us</div>
+          <h2 class="section-title" style="color:white">Trusted Care,<br><em style="color:var(--gold)">Visible Results</em></h2>
+          <p class="section-desc">At Indra Skin Clinic, we combine medical expertise with genuine compassion to deliver skin care that truly makes a difference in your life.</p>
+        </div>
+        <div class="why-features" style="margin-top:2.5rem">
+          <div class="why-item reveal delay-1">
+            <div class="why-icon"><i class="fa-solid fa-user-doctor"></i></div>
+            <div class="why-text">
+              <span class="why-title">Experienced Specialist</span>
+              <span class="why-desc">Dr. Ajay Kumar Rai brings 15+ years of hands-on dermatology expertise to every consultation.</span>
+            </div>
+          </div>
+          <div class="why-item reveal delay-2">
+            <div class="why-icon"><i class="fa-solid fa-vials"></i></div>
+            <div class="why-text">
+              <span class="why-title">Evidence-Based Treatments</span>
+              <span class="why-desc">Every treatment plan is backed by current medical research and best clinical practices.</span>
+            </div>
+          </div>
+          <div class="why-item reveal delay-3">
+            <div class="why-icon"><i class="fa-solid fa-heart-circle-check"></i></div>
+            <div class="why-text">
+              <span class="why-title">Patient-First Approach</span>
+              <span class="why-desc">We listen carefully to your concerns and craft personalised plans that fit your lifestyle.</span>
+            </div>
+          </div>
+          <div class="why-item reveal delay-4">
+            <div class="why-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+            <div class="why-text">
+              <span class="why-title">Affordable Quality Care</span>
+              <span class="why-desc">Premium dermatological care at accessible prices, ensuring everyone can receive expert treatment.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-img-side reveal-right">
+        <div class="why-img-main">
+          <img src="images/clinic-consultation.jpg" alt="Doctor Consultation"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="img-placeholder" style="display:none;min-height:400px;background:linear-gradient(160deg,#3a2820,#2c2420)">
+            <i class="fa-solid fa-stethoscope" style="font-size:3rem;color:var(--rose);opacity:0.5"></i>
+            <span style="color:rgba(255,255,255,0.4)">clinic-consultation.jpg</span>
+          </div>
+        </div>
+        <div class="why-stat-card why-stat-1">
+          <div class="why-stat-num">5000+</div>
+          <div class="why-stat-txt">PATIENTS TREATED</div>
+        </div>
+        <div class="why-stat-card why-stat-2">
+          <div class="why-stat-num">98%</div>
+          <div class="why-stat-txt">SATISFACTION RATE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="gallery">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label">Our Gallery</div>
+      <h2 class="section-title">A Glimpse of Our <em>Clinic</em></h2>
+      <p class="section-desc">Step inside Indra Skin Clinic — a serene, modern space designed for your comfort and care.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item">
+        <img src="images/gallery1.jpg" alt="Clinic Gallery"
+          onerror="this.outerHTML='<div class=\'gallery-item\' style=\'background:linear-gradient(160deg,#f0d5cc,#e8d5b0);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem\'><i class=\'fa-solid fa-camera\' style=\'color:var(--rose);font-size:2rem;opacity:0.5\'></i><span style=\'font-size:0.7rem;color:var(--warm-gray)\'>gallery1.jpg</span></div>'">
+        <div class="gallery-overlay"><span class="gallery-overlay-text">Clinic Entrance</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/gallery2.jpg" alt="Treatment Room"
+          onerror="this.outerHTML='<div style=\'width:100%;height:100%;background:linear-gradient(160deg,#e8d5b0,#faf7f4);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem\'><i class=\'fa-solid fa-camera\' style=\'color:var(--gold);font-size:2rem;opacity:0.5\'></i><span style=\'font-size:0.7rem;color:var(--warm-gray)\'>gallery2.jpg</span></div>'">
+        <div class="gallery-overlay"><span class="gallery-overlay-text">Treatment Room</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/gallery3.jpg" alt="Waiting Area"
+          onerror="this.outerHTML='<div style=\'width:100%;height:100%;background:linear-gradient(160deg,#faf7f4,#f0d5cc);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem\'><i class=\'fa-solid fa-camera\' style=\'color:var(--rose);font-size:2rem;opacity:0.5\'></i><span style=\'font-size:0.7rem;color:var(--warm-gray)\'>gallery3.jpg</span></div>'">
+        <div class="gallery-overlay"><span class="gallery-overlay-text">Waiting Area</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/gallery4.jpg" alt="Equipment"
+          onerror="this.outerHTML='<div style=\'width:100%;height:100%;background:linear-gradient(160deg,#f0d5cc,#faf7f4);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem\'><i class=\'fa-solid fa-camera\' style=\'color:var(--rose);font-size:2rem;opacity:0.5\'></i><span style=\'font-size:0.7rem;color:var(--warm-gray)\'>gallery4.jpg</span></div>'">
+        <div class="gallery-overlay"><span class="gallery-overlay-text">Medical Equipment</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/gallery5.jpg" alt="Doctor at Work"
+          onerror="this.outerHTML='<div style=\'width:100%;height:100%;background:linear-gradient(160deg,#e8d5b0,#f0d5cc);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem\'><i class=\'fa-solid fa-camera\' style=\'color:var(--gold);font-size:2rem;opacity:0.5\'></i><span style=\'font-size:0.7rem;color:var(--warm-gray)\'>gallery5.jpg</span></div>'">
+        <div class="gallery-overlay"><span class="gallery-overlay-text">Doctor at Work</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="testimonials">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label">Patient Reviews</div>
+      <h2 class="section-title">Words from Our <em>Happy Patients</em></h2>
+      <p class="section-desc">Thousands of patients have trusted Dr. Ajay Kumar Rai for their skin concerns. Here's what they have to say.</p>
+    </div>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card reveal delay-1">
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">Dr. Rai is an exceptional doctor. My acne problem of 3 years was solved in just 2 months under his care. He explains everything clearly and the staff is very supportive.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">
+            <img src="images/patient1.jpg" alt="Patient"
+              onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fa-solid fa-user\'></i>'">
+          </div>
+          <div class="author-info">
+            <span class="author-name">Priya Sharma</span>
+            <span class="author-detail">Acne Treatment Patient, Lucknow</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal delay-2">
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">Best dermatologist in Vikas Nagar area. I had severe hair fall and after following his treatment plan, I noticed significant improvement. Highly recommend Indra Skin Clinic.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">
+            <img src="images/patient2.jpg" alt="Patient"
+              onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fa-solid fa-user\'></i>'">
+          </div>
+          <div class="author-info">
+            <span class="author-name">Rahul Verma</span>
+            <span class="author-detail">Hair Loss Treatment Patient, Lucknow</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal delay-3">
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">Very professional clinic with a warm atmosphere. Dr. Ajay Kumar Rai took time to understand my skin allergy issue and the treatment worked wonderfully. Fees are also reasonable.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">
+            <img src="images/patient3.jpg" alt="Patient"
+              onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fa-solid fa-user\'></i>'">
+          </div>
+          <div class="author-info">
+            <span class="author-name">Sunita Gupta</span>
+            <span class="author-detail">Skin Allergy Patient, Vikas Nagar</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:2.5rem" class="reveal">
+      <a href="https://wa.me/919415014154?text=Hi%20Dr.%20Ajay%20Kumar%20Rai%2C%20I%20would%20like%20to%20share%20my%20experience%20with%20Indra%20Skin%20Clinic." target="_blank" rel="noopener" class="btn-outline"><i class="fa-brands fa-whatsapp"></i> Share Your Experience</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq">
+  <div class="container">
+    <div class="faq-grid">
+      <div class="faq-img reveal-left">
+        <img src="images/faq-image.jpg" alt="Skin Care FAQ"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="img-placeholder" style="display:none;min-height:400px;background:linear-gradient(160deg,#f0d5cc,#e8d5b0)">
+          <i class="fa-solid fa-circle-question" style="font-size:3rem;color:var(--rose);opacity:0.5"></i>
+          <span style="color:var(--warm-gray)">faq-image.jpg</span>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
+        <p class="section-desc" style="margin-bottom:2rem">Find answers to the most common questions about our clinic and treatments.</p>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span class="faq-question-text">What skin conditions does Dr. Ajay Kumar Rai treat?</span>
+              <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+            </button>
+            <div class="faq-answer"><p>Dr. Rai treats a wide range of conditions including acne, pimples, pigmentation, eczema, psoriasis, fungal infections, hair fall, dandruff, warts, moles, skin allergies, urticaria, and various other dermatological concerns. He also offers cosmetic dermatology services.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span class="faq-question-text">How do I book an appointment at Indra Skin Clinic?</span>
+              <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+            </button>
+            <div class="faq-answer"><p>You can book an appointment by calling or WhatsApp-ing us at +91-9415014154. You can also fill the appointment form on this website — your details will be sent directly to our WhatsApp for quick confirmation. Walk-in patients are also welcome subject to availability.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span class="faq-question-text">Where is Indra Skin Clinic located?</span>
+              <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+            </button>
+            <div class="faq-answer"><p>The clinic is conveniently located at 3/133, Sector 3, Near Bhasin Medicals, Vikas Nagar, Lucknow – 226022. It is easily accessible from the Vikas Nagar main market area.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span class="faq-question-text">What are the clinic consultation timings?</span>
+              <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+            </button>
+            <div class="faq-answer"><p>The clinic is generally open Monday through Saturday. Morning sessions are typically from 10:00 AM to 1:30 PM and evening sessions from 5:00 PM to 8:00 PM. Please confirm current timings by calling or WhatsApp-ing +91-9415014154 as hours may vary on public holidays.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span class="faq-question-text">Is treatment at the clinic safe and medically approved?</span>
+              <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+            </button>
+            <div class="faq-answer"><p>Absolutely. Dr. Ajay Kumar Rai is a fully qualified and registered dermatologist. All treatments and procedures offered at Indra Skin Clinic are medically approved, evidence-based, and carried out under strict clinical standards for patient safety.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span class="faq-question-text">Are the treatment fees affordable?</span>
+              <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+            </button>
+            <div class="faq-answer"><p>Indra Skin Clinic is committed to making quality dermatological care accessible and affordable. Consultation and treatment fees are reasonable. Please call or WhatsApp for specific pricing details as it may vary based on the type of treatment required.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPOINTMENT FORM -->
+<section id="appointment" class="appointment">
+  <div class="container">
+    <div class="appointment-grid">
+      <div class="reveal-left">
+        <div class="section-label">Book Appointment</div>
+        <h2 class="section-title">Start Your Skin Care <em style="color:var(--gold)">Journey Today</em></h2>
+        <p class="section-desc">Fill out the form and your appointment request will be sent directly to Dr. Ajay Kumar Rai's WhatsApp for instant confirmation.</p>
+        <div class="appt-info">
+          <div class="appt-info-item">
+            <div class="appt-info-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="appt-info-text">
+              <span class="appt-info-title">Clinic Address</span>
+              <span class="appt-info-value">3/133, Sector 3, Near Bhasin Medicals</span>
+              <span class="appt-info-value" style="font-size:0.8rem;color:rgba(255,255,255,0.5)">Vikas Nagar, Lucknow – 226022</span>
+            </div>
+          </div>
+          <div class="appt-info-item">
+            <div class="appt-info-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="appt-info-text">
+              <span class="appt-info-title">Phone / WhatsApp</span>
+              <span class="appt-info-value"><a href="tel:+919415014154" style="color:white;text-decoration:none">+91-9415014154</a></span>
+            </div>
+          </div>
+          <div class="appt-info-item">
+            <div class="appt-info-icon"><i class="fa-solid fa-clock"></i></div>
+            <div class="appt-info-text">
+              <span class="appt-info-title">Clinic Hours</span>
+              <span class="appt-info-value">Mon–Sat: 10AM–1:30PM &amp; 5PM–8PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-card reveal-right">
+        <div class="form-title">Request an Appointment</div>
+        <div class="form-subtitle">We'll respond on WhatsApp within minutes</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-name">Full Name *</label>
+            <input type="text" id="f-name" class="form-control" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="f-phone">Phone Number *</label>
+            <input type="tel" id="f-phone" class="form-control" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-date">Preferred Date *</label>
+            <input type="date" id="f-date" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="f-concern">Treatment Concern *</label>
+            <select id="f-concern" class="form-control">
+              <option value="">Select concern…</option>
+              <option>Acne &amp; Pimples</option>
+              <option>Hair Loss / Alopecia</option>
+              <option>Pigmentation / Dark Spots</option>
+              <option>Psoriasis / Eczema</option>
+              <option>Skin Allergy</option>
+              <option>Warts / Moles / Skin Tags</option>
+              <option>Fungal Infection</option>
+              <option>Cosmetic Consultation</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="f-msg">Additional Message</label>
+          <textarea id="f-msg" class="form-control" placeholder="Describe your concern or any specific questions…"></textarea>
+        </div>
+        <button class="btn-submit" onclick="sendWhatsApp()">
+          <i class="fa-brands fa-whatsapp"></i> Send via WhatsApp
+        </button>
+        <p class="form-note">Your information will be sent securely via WhatsApp. We never share your data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label">Contact Us</div>
+      <h2 class="section-title">Find Us at <em>Vikas Nagar</em></h2>
+      <p class="section-desc">Easily accessible from across Lucknow — we look forward to welcoming you.</p>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-cards">
+          <div class="contact-card reveal delay-1">
+            <div class="contact-card-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="contact-card-body">
+              <span class="contact-card-title">Clinic Address</span>
+              <span class="contact-card-value">3/133, Sector 3, Vikas Nagar</span>
+              <span class="contact-card-sub">Near Bhasin Medicals, Lucknow – 226022, UP</span>
+            </div>
+          </div>
+          <div class="contact-card reveal delay-2">
+            <div class="contact-card-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="contact-card-body">
+              <span class="contact-card-title">Phone &amp; WhatsApp</span>
+              <span class="contact-card-value"><a href="tel:+919415014154">+91-9415014154</a></span>
+              <span class="contact-card-sub">Available during clinic hours</span>
+            </div>
+          </div>
+          <div class="contact-card reveal delay-3">
+            <div class="contact-card-icon"><i class="fa-solid fa-clock"></i></div>
+            <div class="contact-card-body">
+              <span class="contact-card-title">Clinic Timings</span>
+              <div class="hours-table">
+                <div class="hours-row"><span class="hours-day">Monday – Friday</span><span class="hours-time">10:00 AM – 1:30 PM &amp; 5:00 PM – 8:00 PM</span></div>
+                <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">10:00 AM – 2:00 PM</span></div>
+                <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-closed">Closed</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-card reveal delay-4" style="background:linear-gradient(135deg,var(--rose),var(--rose-deep));color:white">
+            <div class="contact-card-icon" style="background:rgba(255,255,255,0.2);color:white"><i class="fa-brands fa-whatsapp"></i></div>
+            <div class="contact-card-body">
+              <span class="contact-card-title" style="color:rgba(255,255,255,0.7)">Quick Contact</span>
+              <span class="contact-card-value" style="color:white">Chat on WhatsApp</span>
+              <a href="https://wa.me/919415014154" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.8);font-size:0.75rem;display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.3rem;text-decoration:none">Tap to open WhatsApp <i class="fa-solid fa-arrow-right" style="font-size:0.65rem"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="map-container reveal-right">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.123456789!2d80.9850!3d26.8467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sVikas+Nagar+Lucknow!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Indra Skin Clinic Location">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="footer-logo">
+          <div class="footer-logo-icon"><i class="fa-solid fa-spa"></i></div>
+          <span class="footer-logo-text">Indra Skin Clinic</span>
+        </a>
+        <p class="footer-bio">A trusted destination for advanced dermatological care in Lucknow. Under the expert guidance of Dr. Ajay Kumar Rai, we are committed to healthy, glowing skin for every patient.</p>
+        <div class="footer-socials">
+          <a href="https://wa.me/919415014154" target="_blank" rel="noopener" class="footer-social" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" class="footer-social" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="footer-social" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="tel:+919415014154" class="footer-social" title="Phone"><i class="fa-solid fa-phone"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="#about"><i class="fa-solid fa-chevron-right"></i> About Clinic</a></li>
+          <li><a href="#doctor"><i class="fa-solid fa-chevron-right"></i> About Doctor</a></li>
+          <li><a href="#treatments"><i class="fa-solid fa-chevron-right"></i> Our Treatments</a></li>
+          <li><a href="#gallery"><i class="fa-solid fa-chevron-right"></i> Clinic Gallery</a></li>
+          <li><a href="#testimonials"><i class="fa-solid fa-chevron-right"></i> Patient Reviews</a></li>
+          <li><a href="#appointment"><i class="fa-solid fa-chevron-right"></i> Book Appointment</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Treatments</div>
+        <ul class="footer-links">
+          <li><a href="#treatments"><i class="fa-solid fa-chevron-right"></i> Acne &amp; Pimples</a></li>
+          <li><a href="#treatments"><i class="fa-solid fa-chevron-right"></i> Hair Loss</a></li>
+          <li><a href="#treatments"><i class="fa-solid fa-chevron-right"></i> Pigmentation</a></li>
+          <li><a href="#treatments"><i class="fa-solid fa-chevron-right"></i> Psoriasis &amp; Eczema</a></li>
+          <li><a href="#treatments"><i class="fa-solid fa-chevron-right"></i> Skin Allergy</a></li>
+          <li><a href="#treatments"><i class="fa-solid fa-chevron-right"></i> Cosmetic Procedures</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact Info</div>
+        <ul class="footer-links" style="gap:1rem">
+          <li style="flex-direction:column;align-items:flex-start;gap:0.2rem">
+            <span style="color:rgba(255,255,255,0.35);font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase">Address</span>
+            <span style="color:rgba(255,255,255,0.65);font-size:0.82rem;line-height:1.6">3/133, Sector 3, Near Bhasin Medicals, Vikas Nagar, Lucknow – 226022</span>
+          </li>
+          <li style="flex-direction:column;align-items:flex-start;gap:0.2rem">
+            <span style="color:rgba(255,255,255,0.35);font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase">Phone / WhatsApp</span>
+            <a href="tel:+919415014154" style="color:var(--rose);font-size:0.88rem;text-decoration:none;font-weight:500">+91-9415014154</a>
+          </li>
+          <li>
+            <a href="#appointment" class="btn-primary" style="font-size:0.78rem;padding:0.6rem 1.2rem;margin-top:0.25rem">
+              <i class="fa-solid fa-calendar-plus"></i> Book Appointment
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 Indra Skin Clinic. All rights reserved. Dr. Ajay Kumar Rai – Dermatologist, Lucknow.</span>
+      <span class="footer-credit">Made with <span style="color:var(--rose)">♥</span> by <a href="YOUR_PORTFOLIO_LINK" target="_blank" rel="noopener">Prateek</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/919415014154?text=Hi%20Dr.%20Ajay%20Kumar%20Rai%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20Indra%20Skin%20Clinic." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+  <span class="wa-tooltip">Chat with us</span>
+</a>
+
+<!-- SCROLL TO TOP -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">
+  <i class="fa-solid fa-chevron-up"></i>
+</button>
+
+<script>
+  // LOADER
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.getElementById('loader').classList.add('hidden');
+    }, 2200);
+  });
+
+  // NAVBAR SCROLL
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+    document.getElementById('scrollTop').classList.toggle('show', window.scrollY > 300);
+  });
+
+  // HAMBURGER MENU
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+  document.querySelectorAll('.mm-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // SCROLL REVEAL
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // FAQ TOGGLE
+  function toggleFAQ(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // WHATSAPP FORM
+  function sendWhatsApp() {
+    const name = document.getElementById('f-name').value.trim();
+    const phone = document.getElementById('f-phone').value.trim();
+    const date = document.getElementById('f-date').value;
+    const concern = document.getElementById('f-concern').value;
+    const msg = document.getElementById('f-msg').value.trim();
+
+    if (!name) { alert('Please enter your full name.'); return; }
+    if (!phone) { alert('Please enter your phone number.'); return; }
+    if (!date) { alert('Please select a preferred date.'); return; }
+    if (!concern) { alert('Please select your treatment concern.'); return; }
+
+    const formattedDate = date ? new Date(date).toLocaleDateString('en-IN', {day:'numeric',month:'long',year:'numeric'}) : 'Not specified';
+
+    const message = `Hello Dr. Ajay Kumar Rai,
+
+I would like to book an appointment at *Indra Skin Clinic*.
+
+*Patient Details:*
+👤 Name: ${name}
+📞 Phone: ${phone}
+📅 Preferred Date: ${formattedDate}
+🩺 Concern: ${concern}
+${msg ? `\n💬 Message: ${msg}` : ''}
+
+Kindly confirm my appointment. Thank you!`;
+
+    const encoded = encodeURIComponent(message);
+    window.open(`https://wa.me/919415014154?text=${encoded}`, '_blank');
+  }
+
+  // ACTIVE NAV LINKS
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id');
+    });
+    navLinks.forEach(a => {
+      a.classList.remove('active');
+      if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
